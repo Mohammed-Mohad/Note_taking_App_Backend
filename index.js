@@ -1,7 +1,7 @@
 const express = require("express");
+require("dotenv").config(); 
 const Note = require("./models/note")
 const cors = require("cors");
-require("dotenv").config(); 
 
 const app = express();
 app.use(cors());
@@ -87,7 +87,7 @@ app.delete("/api/notes/:id", (req, res) => {
   res.status(204).end();
 });
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
